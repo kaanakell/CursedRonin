@@ -13,14 +13,12 @@ public class HealthPickup : MonoBehaviour
         playerHealth = FindObjectOfType<PlayerHealth>();
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    private void OnParticleTrigger()
     {
-        if(playerHealth.currentHealth < playerHealth.maxHealth)
+        if (playerHealth.currentHealth < playerHealth.maxHealth)
         {
             Debug.Log("HP");
-            playerHealth.currentHealth +=  healthBonus;
-            Destroy(gameObject);
+            playerHealth.currentHealth += healthBonus;
         }
-        
     }
 }

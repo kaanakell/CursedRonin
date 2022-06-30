@@ -89,7 +89,7 @@ public class EnemyBehaviourMushroom : MonoBehaviour
 
         if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Mushroom_Attack"))
         {
-            Vector3 targetPosition = new Vector3(target.position.x, transform.position.y, 10);
+            Vector3 targetPosition = new Vector3(target.position.x, transform.position.y, transform.position.z);
 
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
         }
